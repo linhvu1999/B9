@@ -1,0 +1,16 @@
+@media (max-width: 767px) {
+	.description {
+		color:  red;
+	}
+}
+body{
+	border: 1px solid #D8D8D8;
+}
+.bt6 .h1{
+	border: 1px solid #D8D8D8;
+	padding: 10px 30px;
+}
+
+.bt6 .p{
+	margin: -20px 465px;
+}

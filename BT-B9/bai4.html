@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bai4</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"/>
+  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/> 
+  	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+	<form onsubmit="return check()">
+		<h1>Số chẵn lẻ</h1>
+		Nhập số a
+		<input type="text" class="form-control" id="number1">
+		<br>
+		<input type="submit" class="btn btn-success" value="Kết quả">
+	</form>
+	<div id="error" style="color: red"></div> 
+	<div id="result" style="color: blue"></div>
+
+	<script type="text/javascript">
+		function check(){
+		var result='';
+		var obj_number1=document.getElementById('number1');
+		var number1=obj_number1.value;
+		for(var i=1; i<=number1; i++)
+		{
+			if(i%2==0){
+				result += "Các số chẵn là :" +i +"<br/>";
+				document.getElementById('result').innerHTML = result;
+			}
+			else{
+				 if(i%2!=0)
+				result += "Các số lẻ là :" +i +"<br/>";
+				document.getElementById('result').innerHTML = result;
+
+			}
+
+
+		}
+		
+		 return false;
+	}
+	</script>
+</body>
+</html>

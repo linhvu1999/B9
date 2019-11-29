@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bai1</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"/>
+  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/> 
+  	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+<form onsubmit="return handleSubmit()">
+	<h1>Chu vi và diện tích hình chữ nhật</h1>
+	<br>
+    Nhập vào chiều dài (đơn vị : met)<input type="text" class="form-control" id="number1" >
+    <br>
+    Nhâp vào chiều rộng(đơn vị: met)<input type="text" class="form-control" id="number2" >
+    <br>
+  	<input type="submit" class="btn btn-success" value="Tính chu vi và diện tích">
+</form>
+
+<div id=error style="color: red"></div>
+<div id="result" style="color: blue"></div>
+
+	<script type="text/javascript">
+		function handleSubmit(){
+			var error = '';
+			var result = '';
+			var obj_number1 = document.getElementById('number1');
+			var number1 = obj_number1.value;
+			var obj_number2 = document.getElementById('number2');
+			var number2 = obj_number2.value;
+			if (number1 == '' || number2 == '') {
+				error = "Không được để trống dữ liệu";
+				//focus con trỏ chuột vào trường hiện tại
+				obj_number1.focus();
+				obj_number2.focus();
+			}
+			else if (isNaN(number1)==true || isNaN(number2)==true) {
+				error = "Cần nhập dự liệu là số";
+				
+			}
+			else{
+				number1 = parseInt(number1);
+				number2 = parseInt(number2);
+				result +="Chu vi : " +(number1*2+number2*2) + "m";
+				result +="<br/>";
+				result +="Diện tích : " +(number1*number2) + "m<sup>2</sup>";
+				result +="<br/>";
+				
+			}
+			document.getElementById('result').innerHTML = result;
+			document.getElementById('error').innerHTML = error;
+			return false;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+@media (max-width: 767px) {
+	.description {
+		color:  red;
+	}
+}
+body{
+	border: 1px solid #4cc3fc;
+	background: #4cc3fc;
+	width: 1000px;
+}
+.bt6 .container{
+	border: 2px solid blue;
+	background: #fff;
+	width: 955px;
+	margin: 25px
+}
+.bt6 .col{
+	color: blue;
+}
+.bt6 .image{
+	width: 995px;
+    margin: 10px -15px;
+}
+.bt6 .title-login{
+	color: blue;
+    margin: 0px 30px;
+}
+.bt6 .content{
+	margin: 40px 30px;
+}
+.bt6 .form-control{
+	height: 65px;
+}
+.bt6 .footer{
+	margin: -20px 360px;
+}
+.bt6 .footer-1{
+	text-align: center;
+    /*margin: 30px;*/
+    color: #fff;
+}

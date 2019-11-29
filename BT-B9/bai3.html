@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bai3</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/all.min.css"/>
+  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/> 
+  	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+	<form onsubmit="return handleSubmit()">
+		<h1>Chu vi và diện tích hình tròn</h1>
+		Nhập bán kính(đơn vị: met)
+		<input type="text" class="form-control" id="number">
+		<br>
+		<input type="submit" class="btn btn-success" value="Tính chu vi và diện tích hình tròn">
+	</form>
+	<div id="error" style="color: red"></div>
+	<div id="result" style="color: blue"></div>
+	<script type="text/javascript">
+		function handleSubmit(){
+			var error = '';
+			var result = '';
+			var obj_number = document.getElementById('number');
+			var number = obj_number.value;
+			if(number=='')
+			{
+				error = "Không được để trống dữ liệu";
+				obj_number.focus();
+			}
+			else if (isNaN(number)==true) {
+				error = "Cần nhập dữ liệu là số";
+				obj_number.focus();
+			}
+			else{
+				number = parseInt(number);
+				result += "Chu vi : " + (2*3.14*number) +"m";
+				result +="<br/>";
+				result += "Diện tích : " + (3.14*number*number) +"m<sup>2</sup>";
+			}
+			document.getElementById('error').innerHTML = error;
+			document.getElementById('result').innerHTML = result;
+			return false;
+		}
+	</script>
+</body>
+</html>

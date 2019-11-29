@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+    <form onsubmit="return checkNT()">
+        <h1>Nguyên tố</h1>
+        Nhập số a
+        <input type="text" class="form-control" id="number1">
+        <br>
+        <input type="submit" class="btn btn-success" value="Kết quả">
+    </form> 
+    <div id="error" style="color: red"></div> 
+    <div id="result" style="color: blue"></div>
+ 
+    <script type="text/javascript">
+     function checkNT(){
+        var result='';
+        var obj_number1=document.getElementById('number1');
+        var number1=obj_number1.value;
+        if(number1 <2){
+            result= "so "+number1+" so nay khong la so nguyen to";
+        }
+        else{
+            var check=true;
+            for(var i=2;i<=Math.sqrt(number1);i++){
+                if(number1%i==0){
+                    for(var i=1; i<number1;i++)
+                    {
+                        result = "Các số nguyên tố nhỏ hơn : " +i;
+                    document.getElementById('result').innerHTML = result;
+                    }
+                    check=false;
+                }
+
+            }
+            // if(check){
+            //     result="so "+number1+" la so nguyen to";
+            // }
+            // else{
+            //     result="so "+number1+" khong la so nguyen to";
+            // }
+        }
+        document.getElementById('result').innerHTML=result;
+        return false; 
+
+    }
+    //   function handle(){
+    //     // result ="Cac so nguyen to nho hon n la: ";
+    // for (i = 2; i <= number; i++)
+    //     if (checkNT(i) ==true)
+    //         result = "Các số nguyên tố nhỏ hơn : " +i;
+    //     document.getElementById('result').innerHTML = result;
+    // }
+    
+    
+</script>
+            
+    </body>
+</html> 
+
+
